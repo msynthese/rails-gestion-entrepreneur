@@ -1,0 +1,20 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon menu border border-secondary rounded">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav me-auto flex-column">
+        <% if user_signed_in? %>
+          <li class = "list-menu pt-4 border-bottom border-dark"><%= link_to "Clients", "#" %></li>
+          <li class = "list-menu border-bottom border-dark" ><%= link_to "Fournisseurs", "#"%></li>
+          <li class = "list-menu border-bottom border-dark"><%= link_to "Articles", "#" %></li>
+        <% else %>
+            <li class = "list-menu pt-4 border-bottom border-dark"><%= "Clients"%></li>
+            <li class = "list-menu border-bottom border-dark" ><%= "Fournisseurs"%></li>
+            <li class = "list-menu border-bottom border-dark"><%= "Articles"%></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

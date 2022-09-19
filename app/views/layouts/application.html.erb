@@ -10,9 +10,13 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
+  <body>
+    <%= render "shared/navbar" %>
 
-    <%= yield %>
+    <%= render "shared/flashes" %>
+    <div class = "container-fluid d-flex p-0" style= "height: calc(100vh - 74px);">
+      <%= render "shared/menu" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
