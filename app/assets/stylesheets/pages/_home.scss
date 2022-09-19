@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+.home-background{
+  width: inherit;
+  background-image: image-url('home-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2px;
+  margin-left: 2px;
+}
