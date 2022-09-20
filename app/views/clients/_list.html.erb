@@ -1,0 +1,6 @@
+<ul>
+  <% @clients.each do |client|%>
+    <% puts(client.prenom)%>
+    <p><%= "#{client.prenom} #{client.nom}"%></p>
+  <%end%>
+</ul>

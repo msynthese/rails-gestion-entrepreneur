@@ -6,9 +6,12 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav me-auto flex-column">
         <% if user_signed_in? %>
-          <li class = "list-menu pt-4 border-bottom border-dark"><%= link_to "Clients", "#" %></li>
+          <li class = "list-menu pt-4 border-bottom border-dark"><%= link_to "Clients", clients_path %></li>
           <li class = "list-menu border-bottom border-dark" ><%= link_to "Fournisseurs", "#"%></li>
           <li class = "list-menu border-bottom border-dark"><%= link_to "Articles", "#" %></li>
+          <% if current_user.admin? %>
+            <li class = "list-menu border-bottom border-dark"><%= link_to "admin", rails_admin_path %></li>
+          <% end %>
         <% else %>
             <li class = "list-menu pt-4 border-bottom border-dark"><%= "Clients"%></li>
             <li class = "list-menu border-bottom border-dark" ><%= "Fournisseurs"%></li>
