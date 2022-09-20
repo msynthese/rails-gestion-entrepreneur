@@ -15,4 +15,16 @@ user_2 = { prenom: "Melanie", nom: "Megret", email: "melanie01550@hotmail.fr", p
   user = User.create!(attributes)
   puts "Created #{user.email}"
 end
-puts "All Users created!"
+puts "All users created!"
+
+
+puts "Destroying Clients..."
+Client.destroy_all
+puts "Creating Clients..."
+client_1 = { prenom: "corentin", nom: "Megret", email: "corentin@gmail.com", adresse: "114 rue la vie du char", cp: "01130", ville: "Echallon", pays: "France", telephone_portable: "07-86-29-45-52"}
+client_2 = { prenom: "evann", nom: "Megret", email: "evann@hotmail.fr", adresse: "114 rue la vie du char", cp: "01130", ville: "Echallon", pays: "France", telephone_portable: "06-09-05-05-97" }
+[client_1, client_2].each do |attributes|
+  client = Client.create!(attributes)
+  puts "Created #{client.email}"
+end
+puts "All clients created!"
