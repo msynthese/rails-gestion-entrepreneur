@@ -1,6 +1,36 @@
-<ul>
-  <% @clients.each do |client|%>
-    <% puts(client.prenom)%>
-    <p><%= "#{client.prenom} #{client.nom}"%></p>
-  <%end%>
-</ul>
+<div class= "container-clients">
+  <table class="table table-hover list-clients">
+    <thead>
+      <tr class= "titre">
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Code postal</th>
+        <th scope="col">Ville</th>
+        <th scope="col">pays</th>
+        <th scope="col">Téléphone</th>
+        <th scope="col">Téléphone portable</th>
+        <th scope="col">Email</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @clients.each do |client|%>
+        <tr>
+          <td><%= client.prenom%></td>
+          <td><%= client.nom%></td>
+          <td><%= client.adresse%></td>
+          <td><%= client.cp%></td>
+          <td><%= client.ville%></td>
+          <td><%= client.pays%></td>
+          <td><%= client.telephone_fixe%></td>
+          <td><%= client.telephone_portable%></td>
+          <td><%= client.email%></td>
+          <td><%= link_to "#", class: "btn" do %>
+            <i class="fa-solid fa-pen-to-square"></i>
+          <% end %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>

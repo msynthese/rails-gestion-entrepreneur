@@ -1,0 +1,22 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon border border-secondary rounded navbar-search">
+  <div class="container-fluid">
+    <%= link_to "Nouveau client",root_path, class: "btn btn-outline-success"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarListClients" aria-controls="navbarListClients" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarListClients">
+        <form class="form-inline d-flex">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <div class="btn-group" role="group">
+            <button id="btnGroupDropsearch" type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Rechercher par
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDropsearch">
+              <a class="dropdown-item" href="#">Dropdown link</a>
+              <a class="dropdown-item" href="#">Dropdown link</a>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>

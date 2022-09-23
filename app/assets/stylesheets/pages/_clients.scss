@@ -9,4 +9,24 @@
   // justify-content: center;
   // margin-top: 2px;
   // margin-left: 2px;
+  overflow: auto;
+}
+.list-clients {
+  margin: 10px;
+  width: inherit;
+  border: #756e6b;
+}
+.container-clients {
+  margin: 10px;
+  width: -webkit-fill-available;
+  height: 30vh;
+  border: 1px solid;
+  border-color: #756e6b;
+  overflow: auto;
+}
+.titre {
+  background-color: #756e6b;
+}
+.navbar-search{
+  margin: 10px;
 }
