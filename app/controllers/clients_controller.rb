@@ -2,6 +2,13 @@ class ClientsController < ApplicationController
 
   def index
     @clients = Client.all
+    puts(params)
+
+    @clients = @clients.where("#{params[:search]} ILIKE ?", "%#{params[:query]}%") if params[:query].present?
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "clients/list", locals: { clients: @client }, formats: [:html] }
+    end
   end
 
   def new

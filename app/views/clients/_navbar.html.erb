@@ -5,15 +5,18 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarListClients">
-        <form class="form-inline d-flex">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Rechercher par</option>
+          <%= form_with url: clients_path, method: :get, html: { data: {search_clients_target: "form"} } do |f|%>
+            <%= f.text_field :query, class: "form-control",
+                              placeholder: "Rechercher",
+                              value: params[:query],
+                              data: {search_clients_target: "input",
+                              action:"keyup->search-clients#update"}%>
+          <% end%>
+          <select class="form-select" aria-label="Default select example" data-search-clients-target= "searchParam">
             <option value="Nom">Nom</option>
             <option value="Code">Code postal</option>
             <option value="email">Email</option>
           </select>
-        </form>
     </div>
   </div>
 </div>
