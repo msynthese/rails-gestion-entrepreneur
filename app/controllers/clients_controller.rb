@@ -35,7 +35,7 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
     authorize @client
     if @client.update(client_params)
-      redirect_to clients_path
+      redirect_to client_path
     else
       render :new, status: { clients: client }
     end

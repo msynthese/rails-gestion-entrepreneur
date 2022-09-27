@@ -31,3 +31,17 @@
 .navbar-search{
   margin: 10px;
 }
+.show-client{
+  border: 1px solid;
+  border-color: #756e6b;
+  overflow: auto;
+  margin-bottom: 10px;
+  ul{
+    margin-top: 10px;
+    list-style-type: none;
+  }
+}
+.btn-info-client{
+  width: -webkit-fill-available;
+  margin-bottom: 10px;
+}

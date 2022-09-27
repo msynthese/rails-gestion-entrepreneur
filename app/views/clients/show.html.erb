@@ -1,4 +1,54 @@
-<div class="container">
-<h1 class="text-center">Informations du client</h1>
-<%= button_to "Destroy this client", @client, method: :delete if policy(@client).destroy? %>
+<div class="container clients-background">
+  <h1 class="text-center">Informations du client</h1>
+  <div class="row m-4">
+    <div class="col-12 col-lg-8 show-client">
+      <ul>
+        <li>Prénom: <strong><%= @client.prenom%></strong></li>
+        <li>Nom: <strong><%= @client.nom%></strong></li>
+        <li>Adresse: <strong><%= @client.adresse%></strong></li>
+        <li>Code postal: <strong><%= @client.cp%></strong></li>
+        <li>Ville: <strong><%= @client.ville%></strong></li>
+        <li>Pays: <strong><%= @client.pays%></strong></li>
+        <li>Téléphone: <strong><%= @client.telephone_fixe%></strong></li>
+        <li>Téléphone portable: <strong><%= @client.telephone_portable%></strong></li>
+        <li>Email: <strong><%= @client.email%></strong></li>
+      </ul>
+    </div>
+    <div class="col-12 col-lg-4">
+      <button type="button" class="btn btn-primary btn-info-client" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Modifier les informations du client
+      </button>
+      <%= button_to "Supprimer ce client", @client, class:"btn btn-danger btn-info-client", method: :delete if policy(@client).destroy? %>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header modal-style-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informations client</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-style-body">
+
+          <%= simple_form_for (@client)do |f|%>
+            <%= f.input :prenom%>
+            <%= f.input :nom%>
+            <%= f.input :adresse%>
+            <%= f.input :cp%>
+            <%= f.input :ville%>
+            <%= f.input :pays%>
+            <%= f.input :telephone_fixe%>
+            <%= f.input :telephone_portable%>
+            <%= f.input :email%>
+      </div>
+      <div class="modal-footer modal-style-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <%= f.button :submit, class: 'btn btn-primary',method: :post if policy(Client).update?%>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
