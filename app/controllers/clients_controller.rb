@@ -1,10 +1,9 @@
 class ClientsController < ApplicationController
 
   def index
-    @clients = Client.all
-    puts(params)
-
-    @clients = @clients.where("#{params[:search]} ILIKE ?", "%#{params[:query]}%") if params[:query].present?
+    @clients = policy_scope(Client.all)
+    # authorize @clients
+    @clients = @clients.where("#{params[:search]} ILIKE ?", "#{params[:query]}%") if params[:query].present?
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: "clients/list", locals: { clients: @client }, formats: [:html] }
@@ -13,10 +12,12 @@ class ClientsController < ApplicationController
 
   def new
     @client = Client.new
+    authorize @client
   end
 
   def create
     @client = Client.new(client_params)
+    authorize @client
     if @client.save
       redirect_to clients_path
     else
@@ -27,21 +28,32 @@ class ClientsController < ApplicationController
 
   def edit
     @client = Client.find(params[:id])
+    authorize @client
   end
 
   def update
     @client = Client.find(params[:id])
-    puts(@client)
+    authorize @client
     if @client.update(client_params)
       redirect_to clients_path
     else
       render :new, status: { clients: client }
-      puts("error update")
     end
   end
 
   def show
     @client = Client.find(params[:id])
+    authorize @client
+  end
+
+  def destroy
+    @client = Client.find(params[:id])
+    authorize @client
+    if @client.destroy
+      redirect_to clients_path
+    else
+      render :new, status: { clients: client }
+    end
   end
 
   private

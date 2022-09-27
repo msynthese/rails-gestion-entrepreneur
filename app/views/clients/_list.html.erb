@@ -15,22 +15,22 @@
       </tr>
     </thead>
     <tbody>
-      <% @clients.each do |client|%>
-        <tr>
-          <td><%= link_to client_path(client) do%>
-            <i class="fa-solid fa-pen-to-square"></i>
-          <%end%></td>
-          <td><%= client.prenom%></td>
-          <td><%= client.nom%></td>
-          <td><%= client.adresse%></td>
-          <td><%= client.cp%></td>
-          <td><%= client.ville%></td>
-          <td><%= client.pays%></td>
-          <td><%= client.telephone_fixe%></td>
-          <td><%= client.telephone_portable%></td>
-          <td><%= client.email%></td>
-        </tr>
-      <%end%>
+        <% @clients.each do |client|%>
+          <tr>
+            <td><%= link_to client_path(client) do%>
+              <i class="fa-solid fa-pen-to-square"></i>
+            <%end%></td>
+            <td><%= client.prenom%></td>
+            <td><%= client.nom%></td>
+            <td><%= client.adresse%></td>
+            <td><%= client.cp%></td>
+            <td><%= client.ville%></td>
+            <td><%= client.pays%></td>
+            <td><%= client.telephone_fixe%></td>
+            <td><%= client.telephone_portable%></td>
+            <td><%= client.email%></td>
+          </tr>
+        <%end%>
     </tbody>
   </table>
 </div>

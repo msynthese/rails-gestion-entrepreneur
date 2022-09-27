@@ -1,7 +1,7 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Nouveau client
-</button>
+  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Nouveau client
+  </button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -27,7 +27,7 @@
       </div>
       <div class="modal-footer modal-style-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <%= f.button :submit, class: 'btn btn-primary',method: :post%>
+          <%= f.button :submit, class: 'btn btn-primary',method: :post if policy(Client).new?%>
       </div>
       <% end %>
     </div>

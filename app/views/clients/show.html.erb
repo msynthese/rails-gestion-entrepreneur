@@ -1,3 +1,4 @@
 <div class="container">
 <h1 class="text-center">Informations du client</h1>
+<%= button_to "Destroy this client", @client, method: :delete if policy(@client).destroy? %>
 </div>
