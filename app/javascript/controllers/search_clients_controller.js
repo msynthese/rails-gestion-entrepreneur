@@ -4,13 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["form", "input", "list", "searchParam"]
 
-  connect() {
-    console.log("hello")
-    console.log(this.formTarget)
-    console.log(this.inputTarget)
-    console.log(this.listTarget)
-    console.log(this.searchParamTarget)
-  }
+  connect() {}
 
   update(){
     const url = `${this.formTarget.action}?query=${this.inputTarget.value}&&search=${this.searchParamTarget.value.toLowerCase()}`
