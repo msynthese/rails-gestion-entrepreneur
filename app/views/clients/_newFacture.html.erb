@@ -1,11 +1,11 @@
 <!-- Button trigger modal -->
-  <i type="button" class="fa-solid fa-square-plus fa-xl modal-btn" data-bs-toggle="modal" data-bs-target="#newDevisModal"></i>Nouveau
+  <i type="button" class="fa-solid fa-square-plus fa-xl modal-btn" data-bs-toggle="modal" data-bs-target="#newFactureModal"></i>Nouvelle
 <!-- Modal -->
-<div class="modal fade" id="newDevisModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="newDevisModalLabel" aria-hidden="true">
+<div class="modal fade" id="newFactureModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="newFactureModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header modal-style-header">
-        <h5 class="modal-title" id="newDevisModalLabel">Nouveau Devis</h5>
+        <h5 class="modal-title" id="newFactureModalLabel">Nouvelle Facture</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,7 +13,7 @@
       <% document = Document.new%>
       <%= simple_form_for [@client,document] do |f|%>
       <div class="modal-body modal-style-body">
-        <%= f.input :types, collection: Document.types.keys, selected: ["Devis"]%>
+        <%= f.input :types, collection: Document.types.keys, selected: ["Facture"]%>
         <%= f.input :client_id, as: :hidden, input_html: {value: @client.id},disabled: true%>
         <%= f.input :designation%>
         <%= f.input :commentaire, as: :text%>

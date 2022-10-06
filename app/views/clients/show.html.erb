@@ -1,7 +1,8 @@
 <div class="container clients-background">
-  <h1 class="text-center">Informations du client</h1>
+  <h1 class="text-center">INFORMATIONS CLIENT</h1>
   <div class="row m-4">
     <div class="col-12 col-lg-8 show-client">
+      <%= render "clients/update"%>
       <ul>
         <li>Prénom: <strong><%= @client.prenom%></strong></li>
         <li>Nom: <strong><%= @client.nom%></strong></li>
@@ -14,11 +15,9 @@
         <li>Email: <strong><%= @client.email%></strong></li>
       </ul>
     </div>
-    <div class="col-12 col-lg-4">
-      <%= render "clients/update"%>
-      <%= button_to "Supprimer ce client", @client, class:"btn btn-danger btn-info-client", method: :delete if policy(@client).destroy? %>
-    </div>
   </div>
-  <%= render "clients/newDevis"%>
+  <h1 class="text-center">DEVIS</h1>
   <%= render "clients/listDevis"%>
+  <h1 class="text-center">FACTURE</h1>
+  <%= render "clients/listFacture"%>
 </div>

@@ -1,5 +1,5 @@
 <div class= "container-clients-devis mx-4">
-  <%= render "clients/newDevis"%>
+  <%= render "clients/newFacture"%>
   <table class="table table-hover list-clients">
     <thead>
       <tr class= "titre">
@@ -17,7 +17,7 @@
     <tbody>
       <% documents = policy_scope(Document.all)%>
       <% documents.each do |document|%>
-        <% if document.client.id == @client.id && document.types == "Devis"%>
+        <% if document.client.id == @client.id && document.types == "Facture"%>
           <tr>
             <td><%= link_to client_document_path(@client,document) do%>
               <i class="fa-solid fa-pen-to-square"></i>

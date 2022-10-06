@@ -12,7 +12,9 @@
   overflow: auto;
 }
 .list-clients {
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   width: inherit;
   border: #756e6b;
   // overflow: auto;
@@ -24,6 +26,14 @@
   border-color: #756e6b;
   // overflow: auto;
 }
+.container-clients-devis {
+  margin: 10px;
+  width: -webkit-fill-available;
+  max-height: 20vh;
+  border: 1px solid;
+  border-color: #756e6b;
+  overflow: auto;
+}
 .titre {
   background-color: #756e6b;
 }
@@ -31,6 +41,7 @@
   margin: 10px;
 }
 .show-client{
+  width: 100vh;
   border: 1px solid;
   border-color: #756e6b;
   overflow: auto;

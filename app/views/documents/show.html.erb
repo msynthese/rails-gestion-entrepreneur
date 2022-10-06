@@ -1,5 +1,5 @@
 <div class= "clients-background  border border-secondary rounded">
-  <h1 class="text-center">Devis N°: <%= @document.id%> </h1>
+  <h1 class="text-center"><%= @document.types%> N°: <%= @document.id%> </h1>
   <h2>Client :</h2>
   <ul>
     <li><%= @document.client.prenom%> <%= @document.client.nom%></li>
@@ -11,4 +11,3 @@
   </ul>
  <%= link_to "Retour", client_path(@document.client)%>
 </div>
-
