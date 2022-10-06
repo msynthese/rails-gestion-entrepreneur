@@ -1,0 +1,35 @@
+<div class= "container-clients m-4">
+  <table class="table table-hover list-clients">
+    <thead>
+      <tr class= "titre">
+        <th scope="col">Editer</th>
+        <th scope="col">Id</th>
+        <th scope="col">Type</th>
+        <th scope="col">Statut</th>
+        <th scope="col">Création</th>
+        <th scope="col">Modification</th>
+        <th scope="col">Désignation</th>
+        <th scope="col">Montant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% documents = policy_scope(Document.all)%>
+      <% documents.each do |document|%>
+        <% if document.client.id == @client.id%>
+          <tr>
+            <td><%= link_to client_document_path(@client,document) do%>
+              <i class="fa-solid fa-pen-to-square"></i>
+            <%end%></td>
+            <td><%= document.id%></td>
+            <td><%= document.types%></td>
+            <td><%= document.statut%></td>
+            <td><%= document.created_at.strftime('%d-%b-%Y %H:%M')%></td>
+            <td><%= document.updated_at.strftime('%d-%b-%Y %H:%M')%></td>
+            <td><%= document.designation%></td>
+            <td><%= document.montant%></td>
+          </tr>
+        <%end%>
+      <%end%>
+    </tbody>
+  </table>
+</div>

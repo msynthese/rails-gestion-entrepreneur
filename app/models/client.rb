@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-
+  has_many :documents
   validates :prenom, presence: true
   validates :nom, presence: true
   validates :adresse, presence: true

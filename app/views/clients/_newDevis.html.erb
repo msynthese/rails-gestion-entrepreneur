@@ -1,0 +1,31 @@
+<!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary mx-4" data-bs-toggle="modal" data-bs-target="#newDevisModal">
+    Nouveau Devis
+  </button>
+<!-- Modal -->
+<div class="modal fade" id="newDevisModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="newDevisModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header modal-style-header">
+        <h5 class="modal-title" id="newDevisModalLabel">Nouveau Devis</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <% document = Document.new%>
+      <%= simple_form_for [@client,document] do |f|%>
+      <div class="modal-body modal-style-body">
+        <%= f.input :types, as: :hidden, collection: Document.types.keys, selected: ["devis"], disabled: true%>
+        <%= f.input :statut, as: :hidden, collection: Document.statuts.keys, selected: ["creation"], disabled: true%>
+        <%= f.input :client_id, as: :hidden, input_html: {value: @client.id},disabled: true%>
+        <%= f.input :designation%>
+        <%= f.input :commentaire, as: :text%>
+      </div>
+      <div class="modal-footer modal-style-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <%= f.button :submit, class: 'btn btn-primary' if policy(Document).new?%>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

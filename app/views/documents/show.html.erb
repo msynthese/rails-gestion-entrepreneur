@@ -1,0 +1,14 @@
+<div class= "clients-background  border border-secondary rounded">
+  <h1 class="text-center">Devis N°: <%= @document.id%> </h1>
+  <h2>Client :</h2>
+  <ul>
+    <li><%= @document.client.prenom%> <%= @document.client.nom%></li>
+    <li><%= @document.client.adresse%></li>
+    <li><%= @document.client.cp%> <%= @document.client.ville%>, <%= @document.client.pays%></li>
+    <li><%= @document.client.telephone_fixe%></li>
+    <li><%= @document.client.telephone_portable%></li>
+    <li><%= @document.client.email%></li>
+  </ul>
+ <%= link_to "Retour", client_path(@document.client)%>
+</div>
+

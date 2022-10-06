@@ -19,4 +19,6 @@
       <%= button_to "Supprimer ce client", @client, class:"btn btn-danger btn-info-client", method: :delete if policy(@client).destroy? %>
     </div>
   </div>
+  <%= render "clients/newDevis"%>
+  <%= render "clients/listDevis"%>
 </div>
