@@ -27,7 +27,7 @@
   // overflow: auto;
 }
 .container-clients-devis {
-  margin: 10px;
+
   width: -webkit-fill-available;
   max-height: 20vh;
   border: 1px solid;
@@ -42,6 +42,7 @@
 }
 .show-client{
   width: 100vh;
+  max-height: 30vh;
   border: 1px solid;
   border-color: #756e6b;
   overflow: auto;
@@ -54,4 +55,7 @@
 .btn-info-client{
   width: -webkit-fill-available;
   margin-bottom: 10px;
+}
+.modifier{
+  color: rgb(0, 110, 255);
 }
