@@ -41,7 +41,7 @@
   margin: 10px;
 }
 .show-client{
-  width: 100vh;
+  width: -webkit-fill-available;
   max-height: 30vh;
   border: 1px solid;
   border-color: #756e6b;
